@@ -1,0 +1,13 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><style>body{margin:0;background:#f6f7f9;color:#17191c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",sans-serif;line-height:1.75}main{max-width:840px;margin:64px auto;padding:0 24px}.card{background:#fff;border:1px solid #e3e6ea;border-radius:18px;padding:30px}h1{margin-top:0}h2{margin-top:28px}p,li{color:#555f69}code{background:#f1f3f5;padding:2px 6px;border-radius:6px}a{color:#2457d6}</style><title>Data Deletion | Threads Affiliate Lab</title></head><body><main><div class="card">
+<h1>Data Deletion Instructions</h1><p>Threads Affiliate Lab stores operational data locally on the operator's own Windows device. The public information site does not provide user accounts and does not store Threads access tokens.</p>
+<h2>Revoke Threads access</h2><ol>
+<li>Open Threads settings for the connected account.</li>
+<li>Open the website/app permissions area.</li>
+<li>Revoke access for <strong>Threads Affiliate Lab</strong>.</li>
+</ol>
+<h2>Delete local credentials</h2><p>Delete the local project secret directory on the operator's Windows account:</p>
+<p><code>%USERPROFILE%\.threads-affiliate-lab</code></p>
+<p>This removes DPAPI-encrypted Threads and Rakuten credential files stored by the project.</p>
+<h2>Delete local audit data</h2><p>Delete any local audit JSONL, telemetry or generated candidate files created for Threads Affiliate Lab. The current live shadow pipeline does not persist public Threads source-post text.</p>
+<h2>Confirmation</h2><p>After revocation and local deletion, the tool no longer has a usable Threads access token and cannot call the Threads API on behalf of that account.</p>
+</div></main></body></html>

@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="index,follow"><style>body{margin:0;background:#f6f7f9;color:#17191c;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",sans-serif;line-height:1.75}main{max-width:840px;margin:64px auto;padding:0 24px}.card{background:#fff;border:1px solid #e3e6ea;border-radius:18px;padding:30px}h1{margin-top:0}h2{margin-top:28px}p,li{color:#555f69}code{background:#f1f3f5;padding:2px 6px;border-radius:6px}a{color:#2457d6}</style><meta name="robots" content="noindex,nofollow"><title>App Review Guide | Threads Affiliate Lab</title></head><body><main><div class="card">
+<h1>Meta App Review Guide</h1><p>Preparation guide for the Threads Affiliate Lab <code>threads_keyword_search</code> permission.</p>
+<h2>Purpose</h2><p>The app uses the official Threads API to search public Threads posts for a user-provided keyword. Search results are used only to derive structural publishing signals such as hook type, weekday, time bucket, cut style and length bucket. The app does not copy source post text into generated drafts.</p>
+<h2>Requested behavior</h2><ul>
+<li>Authorize with <code>threads_basic</code>, <code>threads_keyword_search</code> and <code>threads_manage_insights</code>.</li>
+<li>Call <code>GET /keyword_search</code> with <code>search_type=TOP</code> and <code>search_type=RECENT</code>.</li>
+<li>Analyze returned post structure in memory.</li>
+<li>Do not persist public source-post text in the live shadow pipeline.</li>
+<li>Do not auto-publish, auto-reply, delete or modify public Threads content.</li>
+</ul>
+<h2>Current safety gates</h2><p>Product drafts require evidence review, a post-quality gate, and explicit human approval. Approved draft bytes may be SHA-256 frozen for audit identity. Freeze is not publication authority.</p>
+<h2>Current development state</h2><p>The API integration, OAuth flow, long-lived token storage, keyword-search request path and fail-closed behavior are implemented. Before App Review approval, public keyword search is expected to remain restricted by Meta to the authenticated user's own posts.</p>
+<h2>Related pages</h2><p><a href="../privacy/">Privacy Policy</a> · <a href="../terms/">Terms of Use</a> · <a href="../data-deletion/">Data Deletion</a></p>
+</div></main></body></html>
